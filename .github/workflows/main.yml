@@ -64,6 +64,9 @@ jobs:
       - name: Add MacOS certs
         if: matrix.os == 'macos-latest' && steps.vars.outputs.HAS_APPLE_CREDS
         run: |
+          echo "Adding macOS Certs!"
+          echo $CERTIFICATE_OSX_APPLICATION
+          echo $CERTIFICATE_PASSWORD
           KEY_CHAIN=build.keychain
           CERTIFICATE_P12=certificate.p12
           echo $CERTIFICATE_OSX_APPLICATION | base64 --decode > $CERTIFICATE_P12
