@@ -63,6 +63,7 @@ jobs:
 
       - name: Add MacOS certs
         if: matrix.os == 'macos-latest' && steps.vars.outputs.HAS_APPLE_CREDS
+        shell: bash
         run: |
           echo "Adding macOS Certs!"
           echo $CERTIFICATE_OSX_APPLICATION
